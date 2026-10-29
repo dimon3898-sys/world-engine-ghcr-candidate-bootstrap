@@ -1,7 +1,7 @@
 {
   "schema": "WORLD_ENGINE_GHCR_BOOTSTRAP_WORKFLOW_POLICY_V1",
-  "status": "DRAFT_NOT_AUTHORIZED",
-  "executionEnabled": false,
+  "status": "APPROVED_FOR_SEPARATE_REGISTRATION",
+  "executionEnabled": true,
   "bootstrapRepository": "dimon3898-sys/world-engine-ghcr-candidate-bootstrap",
   "bootstrapRepositoryId": 1438054766,
   "sourceImage": "ghcr.io/dimon3898-sys/world-simulation-shorts-engine@sha256:9378a86d81341172b48910606d44ca389afd28f5e96b615ceec6fa84321b62da",
