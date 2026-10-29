@@ -1,0 +1,23 @@
+name: WORLD ENGINE - skopeo read-only version probe
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  skopeo-version:
+    if: github.event_name == 'workflow_dispatch' && github.run_attempt == 1 && github.repository == 'dimon3898-sys/world-engine-ghcr-candidate-bootstrap' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Read-only preinstalled skopeo check
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "WORLD_ENGINE_SKOPEO_READONLY_V1"
+          if [ ! -x /usr/bin/skopeo ]; then
+            echo "SKOPEO_PREINSTALLED=NO"
+            exit 2
+          fi
+          echo "SKOPEO_PREINSTALLED=YES"
+          /usr/bin/skopeo --version
+          echo "PROBE_COMPLETED=YES"
